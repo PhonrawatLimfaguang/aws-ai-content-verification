@@ -33,16 +33,20 @@
 ---
 
 ## 📂 Project Structure
+
+โครงสร้างของโปรเจกต์แบ่งออกเป็นส่วนของ Backend (Cloud & AI) และ Frontend (Dashboard) ดังนี้:
+
+```text
 ai-verificationAWS/
-├── 📄 AIVerificationRegistryV2.sol   # Smart Contract หลักสำหรับบันทึกข้อมูล
-├── 📄 server.js                       # ระบบ Backend และ AI Logic (Express)
-├── 📄 abi.json                        # ข้อมูล Interface สำหรับเชื่อมต่อ Blockchain
-├── 📁 dashboard/                      # โฟลเดอร์โปรเจกต์ React (Frontend)
-│   ├── 📁 src/                        # โค้ดต้นฉบับของหน้าจอ Dashboard
-│   └── 📁 public/                     # ไฟล์สาธารณะสำหรับเว็บแอป
-├── 📁 artifacts/                      # ไฟล์ที่ได้จากการ Compile Smart Contract
-├── 📄 attest_submit.js                # สคริปต์สำหรับส่งข้อมูลยืนยัน
-├── 📄 fetch_all_events.mjs            # สคริปต์ดึงข้อมูลเหตุการณ์จาก Blockchain
-├── 📄 package.json                    # รายการ Library ที่โปรเจกต์ต้องการ
-├── 📄 .env.example                    # ตัวอย่างการตั้งค่าสภาพแวดล้อม
-└── 📄 .gitignore                      # ไฟล์ระบุส่วนที่ไม่ต้องนำขึ้น GitHub
+├── 📄 AIVerificationRegistryV2.sol  # Smart Contract (Solidity) สำหรับบันทึก Audit Trail บน Blockchain
+├── 📄 server.js                      # Backend API (Node.js) จัดการ AI Logic และการเชื่อมต่อ AWS/Blockchain
+├── 📄 abi.json                       # Contract Application Binary Interface สำหรับการเรียกใช้ฟังก์ชันใน Smart Contract
+├── 📁 dashboard/                     # ระบบ Frontend (React.js)
+│   ├── 📁 src/                       # Source code หลักของหน้าจอ Dashboard และ UI Components
+│   └── 📁 public/                    # Static assets สำหรับการทำ Web Hosting
+├── 📁 artifacts/                     # ไฟล์ที่ได้จากการ Compile Smart Contract สำหรับการ Deployment
+├── 📄 attest_submit.js               # สคริปต์อัตโนมัติสำหรับการส่งผลการรับรอง (Attestation) ขึ้น Blockchain
+├── 📄 fetch_all_events.mjs           # ระบบดึงข้อมูลย้อนหลังจาก Event Logs ของ Blockchain เพื่อการตรวจสอบ
+├── 📄 package.json                   # รายการ Dependencies และสคริปต์การรันระบบ
+├── 📄 .env.example                   # เทมเพลตสำหรับกำหนดค่า API Keys และ Environment Variables อย่างปลอดภัย
+└── 📄 .gitignore                     # กำหนดไฟล์ที่ไม่ต้องนำขึ้นระบบ เช่น node_modules และความลับส่วนตัว
